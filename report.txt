@@ -1,0 +1,3 @@
+Today i have done a project regarding the inventory using concepts like objects class,interface,inheritance.
+This project contains a objects like vehicle or books so that that can be purchased or rental based.
+I have gone through the module video and done a sample project using abstract class .
