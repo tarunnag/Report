@@ -1,3 +1,7 @@
 Today i have done a project regarding the inventory using concepts like objects class,interface,inheritance.
 This project contains a objects like vehicle or books so that that can be purchased or rental based.
 I have gone through the module video and done a sample project using abstract class .
+Bank Poject:
+ 1.we have created the data fields that are given and created a new class according to the flow chart and created the constructors and set the properties
+ 2.In the constructors we have override the constrcutors for abstract constructor and done a chaining constructors 
+ 3.We have created the methods according the flow chart.
