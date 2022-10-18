@@ -5,3 +5,22 @@ Bank Poject:
  1.we have created the data fields that are given and created a new class according to the flow chart and created the constructors and set the properties
  2.In the constructors we have override the constrcutors for abstract constructor and done a chaining constructors 
  3.We have created the methods according the flow chart.
+
+SQL:
+DBMS-Data base Management System
+  it is a software used to manage the database.
+  it basically serves as an interface between the database and its end users.used to retrieve,update and manage the data.
+
+there are 4 types of dbms
+ 1.Hierarchial
+ 2.Network
+ 3.Relational
+ 4.Object oriented
+
+1.Heirarchial-it showcase the predices and successor type of relationship
+its like a tree in which nodes represents records and branches represents field
+
+2.Relational-data is stored in the form of tables
+
+3.object oriented-i this everything is represent in a object it contains data and instructions to be done with the data
+4.Network-multiple users data can be link
