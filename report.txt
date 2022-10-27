@@ -83,7 +83,7 @@ select * from samplesource order by employeeScore desc
 select COUNT(employeeId),employeeScore from samplesource group by employeeScore;
 select employeeId,employeeName,count(employeeScore) from sampleTarget group by grouping sets((employeeId,employeeName,employeeScore),(employeeId),(employeeName),(employeeScore));
 select employeeID,count(employeeScore) from samplesource group by cube(employeeId) order by(employeeId)
-19-10-2022
+
 ->Constraints:- The rule given  for the column for validation
 *)Unique :-It is used to avoid the duplicate values into the coloum
 ->CREATE TABLE Persons (
@@ -116,7 +116,7 @@ if the condtion  is satisfied the value is accepted else  it will be rejected
 ->forenkey:-
 *) FOREIGN KEY is a field in one table that refers to the PRIMARY KEY in another table.
 ->The table with the foreign key is called the child table and the table with the primary key is called the referenced or parent table.
-20-10-2022
+
 select*from DimEmployee
 select*from DimProduct
  
@@ -311,3 +311,30 @@ Assignment:
 database to the visual studio code and there give the server name and select the database 
 -using the sqlconnection connect to the database using the string and there you can do the operations which you want to do by sqlcommand 
 -So whatever you have done here willn effect the database table.
+foreign key :
+-It is the key which allows null records as well as duplicate records 
+-Without the primary key we can cannot create the foreign key
+-using single primary key we can define more than one foreign key 
+example:  create table account(ano int primary key);
+          create table transactions(ano foreign key references account(ano))
+views:
+- It is nothing but behaves as a table but not a table we can perform any operations you want.
+-It is used for hiding the data and it cannot be modified.
+-It is mainly to perform the action like joins etc so that the main table will not get effected.
+example :  create view Vwemployee  as select * from employee 
+select * from Vwemployee
+Stored procedure:
+ -It is like the functions created by the user so that it can be called anytime you want to use it.
+-It can be called by using the sp name so that you can get that
+example: create procedure spEMployee as begin select name,empid from emloyee
+by using the spEmployee you can access the whole query what you have done.
+-stored procedure can be be of parameters also we will pass the parameter to the stored procedure
+example: 
+    create procedure spGetemployee
+    @gender nvarchar(20),@depid int
+    as begin
+        select empid,name,depid from emp where gender=@gender and depid=@depid
+    end
+spGetemployee 'male',3
+you can access like this with the parameters
+you can access like spGetemployee @depid =3,@gender='female'
