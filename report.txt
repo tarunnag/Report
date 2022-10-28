@@ -338,3 +338,46 @@ example:
 spGetemployee 'male',3
 you can access like this with the parameters
 you can access like spGetemployee @depid =3,@gender='female'
+
+Functions:
+A function in SQL Server is a subprogram that is used to perform an action such as complex calculation and returns the result of the action as a value. There are two types of functions in SQL Server, such as
+
+1.System Defined Function
+2.User-Defined Function
+
+In SQL Server, we can create three types of User-Defined Functions, such as
+
+1.Scalar Valued Functions
+2.Inline Table-Valued Functions
+3.Multi-Statement Table-Valued Functions
+
+Scalar Vlued Functions:
+The user-defined function which returns only a single value (scalar value) is known as the Scalar Valued Function. Scalar Value Functions in SQL Server may or may not have parameters that are optional but always return a single (scalar) value which is mandatory.
+example:
+ CREATE FUNCTION CalculateAge
+(
+  @DOB DATE
+)
+RETURNS INT
+AS
+BEGIN
+  DECLARE @AGE INT
+  SET @AGE = DATEDIFF(YEAR, @DOB, GETDATE())-
+  CASE
+    WHEN (MONTH(@DOB) > MONTH(GETDATE())) OR
+       (MONTH(@DOB) = MONTH(GETDATE()) AND
+        DAY(@DOB) > DAY(GETDATE()))
+    THEN 1
+    ELSE 0
+  END
+  RETURN @AGE
+END
+
+Inline Table-Valued Functions:
+In the case of an Inline Table-Valued Function, the body of the function will have only a Single Select Statement prepared with the “RETURN” statement.
+example:
+ create function getstudentdetails(@id int)
+returns table as 
+return(select * from DimCustomer where CustomerKey=@id)
+To get the function output we should pass the parameter and then you can activate the function
+example:  select * from getstudentdetails(11001)
