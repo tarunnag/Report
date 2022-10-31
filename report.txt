@@ -381,3 +381,43 @@ returns table as
 return(select * from DimCustomer where CustomerKey=@id)
 To get the function output we should pass the parameter and then you can activate the function
 example:  select * from getstudentdetails(11001)
+
+Index:
+Indexes are used to retrieve data from the database more quickly than otherwise. The users cannot see the indexes, they are just used to speed up searches/queries.
+example: create index IX_employee_salary on emp (esalary asc)
+ select * from emp
+They are 2 types:
+ -clustered index
+ -non clustered index
+clustered index: 
+-Clustered indexes are indexes whose order of the rows in the data pages corresponds to the order of the rows in the index. This order is why only one clustered index can exist in any table, whereas, many non-clustered indexes can exist in the table.
+example: 
+create clustered index IX_tblemployee_gender_salary
+on tblemployee (gender desc,salary desc)
+select * from tblemployee 
+-only one clustered index can be created in a table
+
+Collections:
+ -Array are used to store the multiple data of same type and the array cannot  be changed dynamically.
+ -We cannot perform some of the operations in the array that is 
+  -increasing the size
+  -inserting the values in the middle 
+  -deleting or removing the values from the middle 
+So,to overcome this the collections are there .
+It is of 2 types:
+ 1.Non generic collections: It is like the classes in the c# like stack,queue,linkedlist,arraylist,hashtable,sortedlist 
+ Arraylist:
+   -these comes under the system.collections package
+   -Arraylist is useed for creating a dynamic and it allocate the capacity in built as 0 if no elements and 4 if there is any element
+   -After the elements reaches 4 it will automatically increases the size to the 8 and it doubles every time.
+   -We can insert and remove in this.
+  example: arraylist a1=new arraylist()
+ Hashtable: 
+   -The listarray is a key pair and we can store the data but the key is fixed one that is it not user defined,it is pre defined 
+   -So to overcome this the hashtable comes into the scope here we can add the key user defined .
+  example: hashtable ht=new hashtable();
+   -Here we can add the data with key value pair and it generate the hashcode and it will print according to this.
+
+
+
+
