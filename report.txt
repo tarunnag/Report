@@ -417,6 +417,23 @@ It is of 2 types:
    -So to overcome this the hashtable comes into the scope here we can add the key user defined .
   example: hashtable ht=new hashtable();
    -Here we can add the data with key value pair and it generate the hashcode and it will print according to this.
+onion architecture:
+ Onion architecture consists of several concentric layers interacting with each other towards the core, which is the domain. 
+The architecture does not depend on the data layer, as in a traditional three-tier architecture; it depends on real domain models
+
+Data Access Layer — responsible for data processing
+Business Logic Layer — responsible for app logic
+Presentation Layer — responsible for the display (UI, Web API).
+The main problem with this architecture is that all layers are built on top of the Data Access Layer and are, in fact, tied to a certain type of data storage. If this type changes, it causes changes at all levels. The Entity Framework partially solves this problem, but it supports a limited number of database types.
+
+With onion architecture, there is only an object model at the lowest level, which does not depend on the type of database. The actual type of database and the way of storing data is determined at the upper infrastructure level
+jira:
+ jira follows the agile methodology means nothing but dividing the tasks and working individually with it.
+ If a project is there the product owner talks to the client and gets the details of the tasks and will get the epic means nothing but the features to work on it 
+ There will be scrum master between the product owner and scrum team which they will work on it 
+ let us take an example that the client needs the payment through the paypal and paytm there are two epics that is nothing but the features.
+ product owner gets and give it to the scrum master and there will be a scrum team and they will split into the stories that is task to work on.
+ For this they will be a sprint that is like 1-4 weeks and within that only they use to complete the stories.
 
 
 
